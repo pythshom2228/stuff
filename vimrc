@@ -1,5 +1,4 @@
 set number
-set cursorline
 set nohlsearch
 set tabstop=4
 set shiftwidth=4
@@ -19,12 +18,11 @@ filetype plugin on
 set ttyfast    
 set autoindent              " indent a new line the same amount as the line just typed
 set showcmd
-
+set ruler
 set belloff=all
 set novisualbell
 "set t_vb=
 set tm=500
-set ruler
 let mapleader = ","  
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -47,9 +45,8 @@ call plug#begin()
 call plug#end()
 let g:gruvbox_contrast_dark = 'hard'
 let g:airline_theme='dark'
-colorscheme gruvbox
+colorscheme wildcharm
 set background=dark
-
 
  "#Включение vim-lsp
 if executable('clangd')
@@ -84,6 +81,8 @@ nnoremap <silent> <F2> :LspRename<CR>
 nnoremap <silent> <leader>f :LspDocumentFormat<CR>
 nnoremap <leader>dn :LspNextDiagnostic<CR>
 nnoremap <leader>dp :LspPreviousDiagnostic<CR>
+nnoremap H gT
+nnoremap L gt
 " Включение asyncomplete
 set completeopt=menuone,noinsert,noselect,preview
 let g:asyncomplete_auto_popup = 1  " Автовызов меню
@@ -98,4 +97,5 @@ set pumwidth=50
 highlight Pmenu ctermfg=Black ctermbg=Magenta
 highlight PmenuSel ctermfg=Black ctermbg=Cyan
 
-set guifont=12
+"set guifont=12
+"hi Normal ctermbg=NONE
